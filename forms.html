@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Amogh Learns Forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  <script>
+    //Assumption all forms must have unique IDs
+
+
+    //take an array of all the ids of each form
+
+    window.demandbaseFormTagNames =  document.getElementsByTagName('form');
+
+    window.demandbaseFormTagNames = formId
+    var activeEmailId;
+    var activeCompanyId;
+
+
+
+    //find a way to recursively iterate through that array
+    //within each call of the array, have it fill the form
+    //at the last call of the array, have it delete the tracking object
+  </script>
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
+      display: inline-block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+
+    .form-control {
+      display: block;
+      width: 100%;
+      height: 34px;
+      padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      background-image: none;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+
+    .col-sm-3 {
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    .form {
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form">
+    <form id="form1">
+      <h2>Form 1</h2>
+      <div class="form-group">
+        <label class="col-sm-3">First Name</label>
+        <input class="form-control" type="text" id="name">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Last Name</label>
+        <input class="form-control" type="text" id="lastName">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Email</label>
+        <input class="form-control" type="text" id="email">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Job Title</label>
+        <input class="form-control" type="text" id="jobTitle">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Company</label>
+        <input class="form-control" type="text" id="company">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Phone</label>
+        <input class="form-control" type="text" id="phone">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">City</label>
+        <input class="form-control" type="text" id="city">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">State</label>
+        <input class="form-control" type="text" id="state">
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3">Country</label>
+        <input class="form-control" type="text" id="country">
+      </div>
+      <div class="form-group">
+        <!-- <label class="col-sm-3">Zip</label> -->
+        <input class="form-control" type="hidden" id="zip">
+      </div>
+    </form>
+  </div>
+  <div class="form">
+    <h2>Form 2</h2>
+      <form id="form2">
+        <div class="form-group">
+          <label class="col-sm-3">First Name</label>
+          <input class="form-control" type="text" id="name">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Last Name</label>
+          <input class="form-control" type="text" id="lastName">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Email</label>
+          <input class="form-control" type="text" id="email2">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Job Title</label>
+          <input class="form-control" type="text" id="jobTitle">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Company</label>
+          <input class="form-control" type="text" id="company2">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Phone</label>
+          <input class="form-control" type="text" id="phone">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">City</label>
+          <input class="form-control" type="text" id="city">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">State</label>
+          <input class="form-control" type="text" id="state">
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3">Country</label>
+          <input class="form-control" type="text" id="country">
+        </div>
+        <div class="form-group">
+          <!-- <label class="col-sm-3">Zip</label> -->
+          <input class="form-control" type="hidden" id="zip">
+        </div>
+      </form>
+    </div>
+  <script>
+    
+
+
+
+
+
+  </script>
+  <script>
+    (function(d,b,a,s,e){var t=b.createElement(a),
+      fs=b.getElementsByTagName(a)[0];t.async=1;t.id=e;t.src=s;
+      fs.parentNode.insertBefore(t,fs);})
+    (window,document,'script','https://tag.demandbase.com/3c923b7e.min.js','demandbase_js_lib');
+  </script>    
+  </body>
+</html>
