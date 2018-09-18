@@ -1,27 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-    try {
-      if (window.sessionStorage) {
-    
-            var standardDimensions = sessionStorage.getItem('s_dmdbase') || '';
-            var customDimensions1 = sessionStorage.getItem('s_dmdbase_custom1') || '';
-            var customDimensions2 = sessionStorage.getItem('s_dmdbase_custom2') || '';
-            var customDimensions3 = sessionStorage.getItem('s_dmdbase_custom3') || '';
-            var customDimensions4 = sessionStorage.getItem('s_dmdbase_custom4') || '';
-    
-            s.contextData.s_dmdbase = standardDimensions;
-            s.contextData.s_dmdbase_custom1 = customDimensions1;
-            s.contextData.s_dmdbase_custom2 = customDimensions2;
-            s.contextData.s_dmdbase_custom3 = customDimensions3;
-            s.contextData.s_dmdbase_custom4 = customDimensions4;
-      }
-    }
-    catch (e) {
-        if(window.console){console.log("DB _ ERR " + e.message);}
-    }
-  </script>
+  <script src="//scripts.demandbase.com/adobeanalytics/[DB_TAG_UID].min.js"></script>
+  <script src="//api.company-target.com/api/v2/ip.json?key=[DB_API_KEY]&callback=Dmdbase_CDC.callback"></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Amogh Learns Adobe Target</title>
