@@ -21,11 +21,11 @@
       function poll() {
         pollCount++;
         if ((window.Dmdbase_CDC && window.Dmdbase_CDC.CompanyProfile && window.Dmdbase_CDC.targetReady === true) || pollCount === MAX_POLL_COUNT) {
-          //console.log("running create global mbox");
+          console.log("running create global mbox");
           TNT.createGlobalMbox();
           clearTimeout(poll);
         } else if (pollCount < MAX_POLL_COUNT) {
-          //console.log("global mbox not found yet");
+          console.log("global mbox not found yet");
           setTimeout(poll, POLL_INTERVAL);
         }
       }
