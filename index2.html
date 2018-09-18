@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="//scripts.demandbase.com/adobeanalytics/[DB_TAG_UID].min.js"></script>
-  <script src="//api.company-target.com/api/v2/ip.json?key=[DB_API_KEY]&callback=Dmdbase_CDC.callback"></script>
+  <script src="//scripts.demandbase.com/adobeanalytics/3c923b7e.min.js"></script>
+  <script src="//api.company-target.com/api/v2/ip.json?key=e2cf2f51d2f440828a79e18aa5e8a737&callback=Dmdbase_CDC.callback"></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Amogh Learns Adobe Target</title>
@@ -10,5 +10,30 @@
 </head>
 <body>
   <h2>This page for adobe target loads</h2>
+  <script>
+    try{
+      var POLL_INTERVAL = 50;
+
+      // Max number of poll attempts
+      var MAX_POLL_COUNT = 5;
+
+      var pollCount = 0;
+      function poll() {
+        pollCount++;
+        if ((window.Dmdbase_CDC && window.Dmdbase_CDC.CompanyProfile && window.Dmdbase_CDC.targetReady === true) || pollCount === MAX_POLL_COUNT) {
+          //console.log("running create global mbox");
+          TNT.createGlobalMbox();
+          clearTimeout(poll);
+        } else if (pollCount < MAX_POLL_COUNT) {
+          //console.log("global mbox not found yet");
+          setTimeout(poll, POLL_INTERVAL);
+        }
+      }
+      poll();
+
+    } catch(e){ 
+      console.log(e);
+    }
+    </script>
 </body>
 </html>
