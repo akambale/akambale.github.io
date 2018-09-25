@@ -1,5 +1,7 @@
 //No Custom JavaScript
-
+window.targetGlobalSettings = {
+  enabled:true
+};
 /**
  * @license
  * at.js 1.6.1 | (c) Adobe Systems Incorporated | All rights reserved
