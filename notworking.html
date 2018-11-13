@@ -9,8 +9,11 @@
     
     ga('create', 'UA-122819389-1', 'auto');
     ga('send', 'pageview');
-    ga('create', 'UA-126688100-1', 'auto', 'amoghsPersonalTracker');
-    ga('send', 'pageview');
+
+    setTimeout(() => {
+      ga('create', 'UA-126688100-1', 'auto', 'amoghsPersonalTracker');
+      ga('send', 'pageview');
+    }, 500);
   </script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +30,7 @@
     </script>
 </head>
 <body>
-  <h1>Check out the network tab</h1>
+  <h1>Check out the GA debugger</h1>
   <script>
     setTimeout(() => {
       (function(d,b,a,s,e){var t=b.createElement(a),
