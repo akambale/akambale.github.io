@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html onclick="changeCard()">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Get To Know You Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Lato', sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100%;
+        background-color: aqua;
+      }
+
+      #card {
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        padding: 0px 50px;
+      }
+
+      body.red {
+        background-color: #fea3aa;
+      }
+
+      body.orange {
+        background-color: #f8b88b;
+      }
+
+      body.yellow {
+        background-color: #faf884;
+      }
+
+      body.green {
+        background-color: #baed91;
+      }
+
+      body.blue {
+        background-color: #b2cefe;
+      }
+
+      body.pink {
+        background-color: #f2a2e8;
+      }
+    </style>
+    <script>
+      let cards = ['q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6'];
+      const colorArr = ['red', 'orange', 'yellow', 'green', 'blue', 'pink'];
+
+      let currentIndex = -1;
+
+      const changeCard = () => {
+        currentIndex++;
+        const nextCard = cards[currentIndex];
+        if (nextCard) {
+          changeColor(false);
+          document.getElementById('card').textContent = nextCard;
+        } else {
+          changeColor(true);
+          document.getElementById('card').textContent = 'Congrats, you finished the questions!';
+        }
+      };
+
+      const changeColor = lastCard => {
+        let color = '';
+        if (!lastCard) {
+          color = colorArr[Math.floor(Math.random() * colorArr.length)];
+        }
+
+        // if new color is the same as current color, do recursion
+        if (document.querySelector('body').classList[0] === color) {
+          changeColor(lastCard);
+        } else {
+          document.querySelector('body').classList = color;
+        }
+      };
+
+      // function that shuffles cards
+      const shuffle = array => {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="card">Click to start the questions!</h1>
+    <script>
+      var string = prompt('Please enter you questions separated by commas and a space');
+      cards = string.split(', ');
+      shuffle(cards);
+    </script>
+  </body>
+</html>
